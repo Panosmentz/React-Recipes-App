@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
+  background: linear-gradient(to right, #b92b27, #1565c0);
 }
 
 .search-form {
@@ -35,4 +35,13 @@
   text-align: center;
   font-size: 100px;
   color: lightskyblue;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 50%;
 }

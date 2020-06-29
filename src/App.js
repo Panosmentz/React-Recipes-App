@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import "./App.css";
+import { motion } from "framer-motion";
 
 const App = () => {
-  //API ID and Key
-  const APP_ID = "86025c42";
-  const APP_KEY = "6a516646ea5a6f5c155e0519825fdd31	";
-
   //States for recipe, search and query
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
@@ -20,20 +17,20 @@ const App = () => {
   //API Call and change recipe State
   const getRecipes = async () => {
     const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`
     );
     const data = await response.json();
     setRecipes(data.hits);
-    console.log(data);
+    //  console.log(data);
   };
 
   //set search state to whatever user's input is
-  const updateSearch = e => {
+  const updateSearch = (e) => {
     setSearch(e.target.value);
   };
 
   //on form submission, setQuery state so that the API call runs, reset search state to blank.
-  const getSearch = e => {
+  const getSearch = (e) => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
@@ -42,8 +39,29 @@ const App = () => {
   //render the page
   return (
     <div className="App">
-      <h1 className="header">Simply search for recipes</h1>
-      <form onSubmit={getSearch} className="search-form">
+      <motion.h1
+        className="header"
+        initial={{ x: "100vw", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          duration: 2,
+          type: "spring",
+          stiffness: 130,
+        }}
+      >
+        Simply search for recipes
+      </motion.h1>
+      <motion.form
+        onSubmit={getSearch}
+        className="search-form"
+        initial={{ x: "-100vw", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          duration: 2,
+          type: "spring",
+          stiffness: 130,
+        }}
+      >
         <input
           className="search-bar"
           type="text"
@@ -53,9 +71,9 @@ const App = () => {
         <button className="search-button" type="submit">
           Search
         </button>
-      </form>
+      </motion.form>
       <div className="recipes">
-        {recipes.map(recipe => (
+        {recipes.map((recipe) => (
           <Recipe
             key={recipe.recipe.label}
             title={recipe.recipe.label}
