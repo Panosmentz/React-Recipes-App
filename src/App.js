@@ -17,7 +17,7 @@ const App = () => {
   //API Call and change recipe State
   const getRecipes = async () => {
     const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`
     );
     const data = await response.json();
     setRecipes(data.hits);
