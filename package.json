@@ -1,6 +1,5 @@
 {
-  "homepage": "http://Panosmentz.github.io/React-Recipes-App",
-  "name": "deved",
+  "name": "react-recipe-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
