@@ -4,7 +4,7 @@
 ## Table of contents
 * [Overview](#overview)
 * [Screenshots](#screenshots)
-* [Technologies](technologies)
+* [Technologies](#technologies)
 * [Status](#status)
 * [Live-Demo](#live-demo)
 * [Contact](#contact)
@@ -19,6 +19,7 @@
 * React
 * CSS3.0
 * Bootstrap 4
+* Framer Motion
 
 ## Status
 Project is: _Completed_
