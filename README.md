@@ -6,7 +6,6 @@
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Status](#status)
 * [Live-Demo](#live-demo)
 * [Contact](#contact)
 
@@ -29,9 +28,6 @@ Clone this repository or download .zip and open the folder in your editor.
 > You will need to register an account on Edamam in order to get an `API ID` and `API KEY`. Once you have them, you can use environment variables to protect your keys or just replace `process.env.REACT_APP_APP_ID` and `process.env.REACT_APP_APP_KEY` line 20 in src/App.js 
 > Once you have your call to the API set up, you can open cmd and run `npm start`.
 
-
-## Status
-Project is: _Completed_
 
 ## Live-Demo
 [Live Demo](https://nifty-davinci-b034e9.netlify.app/)
